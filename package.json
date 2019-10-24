@@ -1,0 +1,23 @@
+{
+  "name": "di",
+  "version": "1.0.0",
+  "description": "Simple Dependency Injection Framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/staf ./test/test-config.js",
+    "lint": "./node_modules/.bin/eslint ./"
+  },
+  "keywords": [
+    "dependency",
+    "injection",
+    "di",
+    "ioc"
+  ],
+  "author": "Georgii Kurtanidze",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^6.4.0",
+    "simple": "file:../simple"
+  }
+}
