@@ -1,5 +1,5 @@
 {
-  "name": "di",
+  "name": "sdif",
   "version": "1.0.0",
   "description": "Simple Dependency Injection Framework",
   "main": "index.js",
@@ -18,6 +18,6 @@
   "dependencies": {},
   "devDependencies": {
     "eslint": "^6.4.0",
-    "simple": "file:../simple"
+    "staf": "^1.0.0"
   }
 }
