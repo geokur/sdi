@@ -53,14 +53,14 @@ class Wrapper {
         const objectHandler = new ObjectHandler(objectWrapper)
         return new Proxy(instance, objectHandler)
     }
-    wrapInstance(instance) {
-        const objectWrapper = this.wrapperFactory()
+    wrapInstance(key, instance) {
+        const objectWrapper = this.wrapperFactory(key, instance)
         return Wrapper.wrap(instance, objectWrapper)
     }
     getInstance(key) {
         const instance = this.container.getInstance(key)
         if (this.predicate(key, instance)) {
-            return this.wrapInstance(instance)
+            return this.wrapInstance(key, instance)
         }
         return instance
     }
