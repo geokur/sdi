@@ -18,6 +18,15 @@ class TestBindings {
             assert.strictEqual(actualBinding.value, AClass)
         }
     }
+    bindClass() {
+        return () => {
+            const bindings = new Bindings()
+            bindings.bindClass(AClass)
+            const actualBinding = bindings.getBinding('aclass')
+            assert.strictEqual(actualBinding.type, bindingTypes.CLASS)
+            assert.strictEqual(actualBinding.value, AClass)
+        }
+    }
     classAsSingletonBinding() {
         return () => {
             const bindings = new Bindings()
@@ -86,6 +95,12 @@ class TestBindings {
         return () => {
             const bindings = new Bindings()
             assert.throws(() => bindings.bind('aclass').toClass(testValue), NoNClassBindingError)
+        }
+    }
+    throwsNonClassBindingFromBindClass() {
+        return () => {
+            const bindings = new Bindings()
+            assert.throws(() => bindings.bindClass(testValue), NoNClassBindingError)
         }
     }
 }
