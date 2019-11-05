@@ -98,6 +98,15 @@ class Bindings {
     bind(key) {
         return this.binder.setKey(key)
     }
+    bindClass(...classes) {
+        classes.forEach(cls => {
+            if (!isClass(cls)) {
+                throw new NoNClassBindingError(cls)
+            }
+            const key = this.upKey(cls.name)
+            this.setBinding(key, bindingTypes.CLASS, cls)
+        })
+    }
 }
 
 module.exports = Bindings
