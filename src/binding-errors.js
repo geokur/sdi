@@ -10,10 +10,4 @@ class NoNClassBindingError extends Error {
     }
 }
 
-class NoContainerError extends Error {
-    constructor(key) {
-        super(`No container for key: ${key}`)
-    }
-}
-
-module.exports = { NoBindingError, NoNClassBindingError, NoContainerError }
+module.exports = { NoBindingError, NoNClassBindingError }
