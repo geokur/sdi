@@ -1,7 +1,7 @@
 const Dependencies = require('./dependencies')
 const Bindings = require('./bindings')
 const bindingTypes = require('./binding-types')
-const { NoContainerError } = require('./binding-errors')
+const { NoBindingError } = require('./binding-errors')
 
 
 class Container {
@@ -30,7 +30,7 @@ class Container {
                 return container
             }
         }
-        throw new NoContainerError(key)
+        throw new NoBindingError(key)
     }
     _getClassInstance(Class) {
         return new Class(this.dependencies)
