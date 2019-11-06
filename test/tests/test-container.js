@@ -2,7 +2,7 @@ const assert = require('assert').strict
 
 const Bindings = require('../../src/bindings')
 const Container = require('../../src/container')
-const { NoContainerError } = require('../../src/binding-errors')
+const { NoBindingError } = require('../../src/binding-errors')
 
 let instanceID = 0
 const testValue = 'testValue'
@@ -74,7 +74,7 @@ class TestContainer {
     }
     throwsNoContainer() {
         return () => {
-            assert.throws(() => this.container.getInstance('nobinding'), NoContainerError)
+            assert.throws(() => this.container.getInstance('nobinding'), NoBindingError)
         }
     }
 }
