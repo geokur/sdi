@@ -1,6 +1,6 @@
 {
   "name": "sdif",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Simple Dependency Injection Framework",
   "main": "index.js",
   "scripts": {
