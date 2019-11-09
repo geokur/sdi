@@ -9,9 +9,8 @@ const bindingTypes = require('../../src/binding-types')
 class TestBindingsLoader {
     beforeEach() {
         this.bindings = new Bindings()
-        this.loader = new BindingsLoader()
         const loadedPath = path.resolve(path.join(__dirname, '../loaded'))
-        this.loader.loadDir(loadedPath, this.bindings)
+        BindingsLoader.loadDir(loadedPath, this.bindings)
     }
     classLoading() {
         return () => {
