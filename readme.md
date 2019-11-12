@@ -131,3 +131,22 @@ Expected output:
 Checkout purchase: iPhone 11
 Create order for: iPhone 11
 ```
+## Getting instance through destructuring
+Above example can be changed to use Dependencies class. This will allow getting of instances through destructuring where property names are keys we used in bindings:
+```javascript
+const { Bindings, Container, Dependencies } = require('sdif')
+// ...
+
+// ...
+/* Change getting instance from:
+const logger = container.getInstance('logger')
+const checkoutService = container.getInstance('checkoutService')
+
+to destructuring:
+*/
+
+const dependencies = new Dependencies(container)
+const { logger, checkoutService } = dependencies
+
+//...
+```
