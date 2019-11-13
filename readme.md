@@ -81,8 +81,6 @@ You can bind another key to existing binding. The example above can be changed s
 ```javascript
 // ...
 
-// ...
-
 // Bind all classes
 bindings.bindClass(Car, DieselEngine, AutomaticTransmission)
 
@@ -156,8 +154,8 @@ const { Bindings, Container, Dependencies } = require('sdif')
 // ...
 /* Change getting instance from:
 
-const logger = container.getInstance('logger')
-const checkoutService = container.getInstance('checkoutService')
+    const logger = container.getInstance('logger')
+    const checkoutService = container.getInstance('checkoutService')
 
 to destructuring:
 */
@@ -185,7 +183,7 @@ manually require all classes from files and bind using:
     bindings.bindClass(CheckoutService, OrderService, InMemoryLogger)
 */
 
-// The only binding which needs to be set manually to bind Logger to existing binding 
+// The only binding which needs to be set manually to bind 'logger` to existing binding 
 // and specify that it should be singleton 
 bindings.bind('logger').toKey('inmemoryLogger').asSingleton()
 
