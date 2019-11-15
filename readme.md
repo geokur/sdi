@@ -1,4 +1,5 @@
 # Simple Dependency Injection Framework
+![npm downloads](https://img.shields.io/npm/dm/sdif.svg?style=flat-square)
 ## Background
 This DI framework supports only constructor injection. Internally it uses object destructuring.
 ## Install
